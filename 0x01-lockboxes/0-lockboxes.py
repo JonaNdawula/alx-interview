@@ -3,14 +3,15 @@
 LockBoxes
 """
 
+
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be opened
-    
+
     Args:
         boxes: list of lists where each inner list represents the keys in a box
 
-        Returns: 
+        Returns:
             True if all boxes can be opened and false if not
     """
 
