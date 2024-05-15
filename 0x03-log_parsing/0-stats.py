@@ -50,6 +50,8 @@ try:
                 continue
 
             status_code = parts[-2]
+            if not status_code.isdigit() or len(status_code) != 3:
+                continue
 
             if status_code not in status_codes:
                 status_codes[status_code] = 0
