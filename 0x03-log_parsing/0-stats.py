@@ -35,6 +35,7 @@ def signal_handler(sig, frame):
     """
     handles the signal
     """
+    print_stats()
     sys.exit(0)
 
 
@@ -67,7 +68,7 @@ try:
         except (IndexError, ValueError):
             continue
 
-except (KeyboardInterrupt, SystemExit):
+except SystemExit:
     pass
 
 finally:
