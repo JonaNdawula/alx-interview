@@ -46,6 +46,9 @@ try:
         try:
             parts = line.split()
             size = int(parts[-1])
+            if size < 0:
+                continue
+
             status_code = parts[-2]
 
             if status_code not in status_codes:
