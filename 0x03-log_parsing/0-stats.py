@@ -21,6 +21,7 @@ total_size = 0
 line_count = 0
 interrupted = False
 
+
 def print_stats():
     """
     prints the status code
