@@ -67,7 +67,7 @@ try:
         except (IndexError, ValueError):
             continue
 
-except KeyboardInterrupt:
+except (KeyboardInterrupt, SystemExit):
     pass
 
 finally:
