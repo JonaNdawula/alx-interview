@@ -19,7 +19,7 @@ status_codes = {
 }
 total_size = 0
 line_count = 0
-interrupted = False
+
 
 
 def print_stats():
@@ -36,9 +36,6 @@ def signal_handler(sig, frame):
     """
     handles the signal
     """
-    global interrupted
-    interrupted = True
-    print_stats()
     sys.exit(0)
 
 
@@ -75,5 +72,4 @@ except KeyboardInterrupt:
     pass
 
 finally:
-    if not interrupted:
-        print_stats()
+    print_stats()
