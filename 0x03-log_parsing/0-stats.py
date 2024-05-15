@@ -48,6 +48,9 @@ try:
             size = int(parts[-1])
             status_code = parts[-2]
 
+            if status_code not in status_codes:
+                status_codes[status_code] = 0
+
             if status_code in status_codes:
                 status_codes[status_code] += 1
 
