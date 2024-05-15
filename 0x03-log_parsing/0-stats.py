@@ -62,6 +62,3 @@ try:
 
 except KeyboardInterrupt:
     pass
-
-finally:
-    print_stats()
