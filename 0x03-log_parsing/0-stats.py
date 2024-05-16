@@ -78,8 +78,9 @@ try:
         except (IndexError, ValueError):
             continue
 
-except SystemExit:
-    pass
+except KeyboardInterrupt:
+    print_stats()
+    sys.exit(0)
 
 finally:
     print_stats()
