@@ -47,6 +47,9 @@ try:
         try:
             parts = line.split()
             size = int(parts[-1])
+            if len(parts) < 2:
+                continue
+
             if size < 0:
                 continue
 
