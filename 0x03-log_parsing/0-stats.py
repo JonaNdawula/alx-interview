@@ -58,9 +58,8 @@ try:
                 status_codes[status_code] = 0
 
             if status_code in status_codes:
-                continue
-                
-            status_codes[status_code] += 1
+                status_codes[status_code] += 1
+            
             total_size += size
             line_count += 1
 
