@@ -47,9 +47,6 @@ signal.signal(signal.SIGTERM, signal_handler)
 pattern = r'\S+ - \[\S+ \S+\] "GET /projects/260 HTTP/1.1" \d{3} \d+'
 try:
     for line in sys.stdin:
-        if not re.match(pattern, line):
-            continue
-
         try:
             parts = line.split()
             size = int(parts[-1])
