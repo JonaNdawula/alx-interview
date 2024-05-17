@@ -6,7 +6,6 @@ line and computes metrices
 """
 import sys
 import signal
-import re
 
 
 status_codes = {
@@ -44,7 +43,6 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
 
-pattern = r'\S+ - \[\S+ \S+\] "GET /projects/260 HTTP/1.1" \d{3} \d+'
 try:
     for line in sys.stdin:
         try:
