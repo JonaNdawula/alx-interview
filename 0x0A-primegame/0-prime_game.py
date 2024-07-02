@@ -28,7 +28,23 @@ def isWinner(x, nums):
         Simulate a single game round
         """
         primes = sieve(n)
-        return 'Maria' if len(primes) % 2 != 0 else 'Ben'
+        numbers = set(range(1, n+1))
+        turn = 0
+
+        while primes:
+            prime_to_remove = primes[0]
+            multiples = [i for i in range(prime_to_remove, n+1, prime_to_remove) if i in numbers]
+
+            if not multiples:
+                break
+
+            for m in multiples:
+                numbers.remove(m)
+
+            primes = [p for p in primes if p in numbers]
+            turn = 1 - turn
+
+        return 'Maria' if turn == 1 else 'Ben'
 
     wins = {'Maria': 0, 'Ben': 0}
     for n in nums:
