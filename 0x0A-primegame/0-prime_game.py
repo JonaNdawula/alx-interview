@@ -30,19 +30,25 @@ def isWinner(x, nums):
         """
         Simulate a single game round
         """
-        if n == 1:
-            return 'Ben'
         primes = sieve(n)
-        return 'Maria' if len(primes) % 2 == 1 else 'Ben'
+        return 'Maria' if len(primes) % 2 else 'Ben'
 
-    wins = {'Maria': 0, 'Ben': 0}
-    for n in nums:
+    maria_wins = 0
+    ben_wins = 0
+
+    for _ in range(x):
+        if not nums:
+            break
+        n = nums.pop(0)
         winner = simulateGame(n)
-        wins[winner] += 1
+        if winner == 'Maria':
+            maria_wins += 1
+        else:
+            ben_wins += 1
 
-    if wins['Maria'] > wins['Ben']:
-        return 'Maria'
-    elif wins['Ben'] > wins['Maria']:
+    if maria_wins > ben_wins:
+        return 'Maria';
+    elif ben_wins > maria_wins:
         return 'Ben'
     else:
         return None
